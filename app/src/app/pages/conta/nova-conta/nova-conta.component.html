@@ -1,0 +1,37 @@
+<ion-content>
+    <div id="pageHeader">
+        <p id="contaText">Conta</p>
+        <p id="voltarText" [routerLink]="['/conta']" routerLinkActive="router-link-active">Voltar</p>
+        <!-- <p id="newText" [routerLink]="['/tipoConta/register']" routerLinkActive="router-link-active" >Novo Tipo Conta</p> -->
+    </div>
+    <form (ngSubmit)="enviou()" [formGroup]="conta">
+        <div class="input">
+            <ion-input type="text" placeholder="Descrição" id="descricao" formControlName="descricao"></ion-input>
+        </div>
+        <div class="bgInput"></div>
+        <div class="input">
+            <ion-select multiple="false" placeholder="Selecione um tipo" id="tipo" formControlName="tipo">
+                <ion-select-option *ngFor="let tipo of tiposContas" value={{tipo.nomeTipo}}>{{tipo.nomeTipo}}</ion-select-option>
+            </ion-select>
+        </div>
+        <div class="bgInput"></div>
+        <div class="input">
+            <ion-input type="number" placeholder="Valor" id="valor" min="1" formControlName="valor"></ion-input>
+        </div>
+        <div class="bgInput"></div>
+        <div class="input">
+            <ion-datetime display-format="DD/MM/YY" placeholder="Data de vencimento" id="dataVencimento" formControlName="dataVencimento"></ion-datetime>
+        </div>
+        <div class="bgInput"></div>
+        <div class="input">
+            <ion-select multiple="false" placeholder="Selecione uma situação" id="situacao" formControlName="situacao">
+                <ion-select-option value="0">Em Aberto</ion-select-option>
+                <ion-select-option value="1">Quitada</ion-select-option>
+            </ion-select>
+        </div>
+        <div class="bgInput"></div>
+        <ion-button expand="block" type="submit" id="button" [disabled]="!conta.valid">
+            Salvar
+        </ion-button>
+    </form>
+</ion-content>

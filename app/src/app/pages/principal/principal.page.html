@@ -1,0 +1,48 @@
+<ion-content>
+    <p class="opcoes" *ngIf="!logado" [routerLink]="['/login']" routerLinkActive="router-link-active">
+        Login
+    </p>
+    <body>
+          <ion-menu side="start" content-id="main-content">
+            <ion-header>
+              <ion-toolbar translucent>
+                <ion-title>Menu</ion-title>
+              </ion-toolbar>
+            </ion-header>
+            <ion-content>
+              <ion-list>
+                <ion-item>
+                  <ion-icon name="mail" slot="start"></ion-icon>
+                  <p class="opcoes" [routerLink]="['/conta']" routerLinkActive="router-link-active">Minhas contas</p>
+                </ion-item>
+                <ion-item>
+                  <ion-icon name="paper-plane" slot="start"></ion-icon>
+                  <p class="opcoes" [routerLink]="['/tipoConta']" routerLinkActive="router-link-active">Tipos Contas</p>
+                </ion-item>
+                <ion-item>
+                  <ion-icon name="heart" slot="start"></ion-icon>
+                <p class="opcoes" [routerLink]="['/usuario']" routerLinkActive="router-link-active">Perfil</p>
+                </ion-item>
+                <ion-item>
+                  <ion-icon name="archive" slot="start"></ion-icon>
+                  <p class="opcoes" [routerLink]="['/login']" routerLinkActive="router-link-active">
+                    Log out
+                 </p>
+                </ion-item>
+              </ion-list>
+            </ion-content>
+          </ion-menu>
+      
+          <div class="ion-page" id="main-content">
+            <ion-header>
+              <ion-toolbar>
+                <ion-buttons slot="start">
+                  <ion-menu-button></ion-menu-button>
+                </ion-buttons>
+                <ion-title>Menu</ion-title>
+              </ion-toolbar>
+            </ion-header>
+          </div>
+      </body>
+
+</ion-content>

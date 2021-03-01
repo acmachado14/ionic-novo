@@ -1,0 +1,24 @@
+<ion-content id="page">
+     <img
+        src="../../../assets/conta.png"
+        alt="conta"
+        id="conta"
+      />
+    <p id="loginText">Login</p>
+    <form [formGroup]="login" (ngSubmit)="enviou()">
+        <div id="inputUser" class="input">
+            <ion-input type="text" placeholder="Usuário" id="userName" formControlName="userName"></ion-input>
+        </div>
+        <div class="bgInput"></div>
+        <div id="inputPassword" class="input">
+            <ion-input type="password"#inputPassword placeholder="Senha" id="password" formControlName="password"></ion-input>
+            <p #show id="show" (click)="showPassword(inputPassword, show)">Mostrar</p>
+        </div>
+        <div class="bgInput"></div>
+        <ion-button expand="block" type="submit" id="button" [disabled]="!login.valid">
+            Login
+        </ion-button>
+        <ion-button  expand="block" class="opcoes" [routerLink]="'/register'" routerLinkActive="router-link-active">Cadastrar
+        </ion-button>
+    </form>
+</ion-content>

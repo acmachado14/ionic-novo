@@ -1,0 +1,24 @@
+#menuText {
+    /* Sign Up */
+    position: absolute;
+    width: 113px;
+    height: 36px;
+    left: calc(50% - 113px / 2 + 2px);
+    top: 0px;
+    /* UI - 30 Semi */
+    font-family: Arial;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+    /* Black */
+    color: #000000;
+}
+
+.opcoes {
+    font-family: Arial;
+}
+.my-custom-menu {
+    --width: 500px;
+  }

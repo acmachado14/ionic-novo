@@ -1,0 +1,51 @@
+<ion-content>
+
+    
+    <form [formGroup]="signup" (ngSubmit)="enviou()">
+        <p id="signUpText">Cadastrar</p>
+        <div id="inputName" class="input">
+            <ion-input type="text" placeholder="Usuário" id="userName" formControlName="userName" #userName></ion-input>
+            <div *ngIf="signup.get('userName').invalid && (signup.get('userName').dirty || signup.get('userName').touched)">
+                <small class="form-text text-danger" *ngIf="signup.get('userName').errors.required || signup.get('userName').errors.minlength">
+          Usuário obrigatório. Mínimo 3 caracteres
+        </small>
+            </div>
+            <div *ngIf="verificarUsuario(userName.value)">
+                <small class="form-text text-danger">
+          Usuario já existe
+        </small>
+            </div>
+        </div>
+        <div class="bgInput"></div>
+        <div id="inputEmail" class="input">
+            <ion-input type="email" placeholder="Email" id="email" formControlName="email" #email></ion-input>
+            <div *ngIf="signup.get('email').invalid && (signup.get('email').dirty || signup.get('email').touched)">
+                <small class="form-text text-danger" *ngIf="signup.get('email').errors.required || signup.get('email').errors.email">
+          Email inválido
+        </small>
+            </div>
+            <div *ngIf="verificarEmail(email.value)">
+                <small class="form-text text-danger">
+          Email já cadastrado
+        </small>
+            </div>
+        </div>
+        <div class="bgInput"></div>
+        <div id="inputPassword" class="input">
+            <ion-input #inputPassword type="password" placeholder="Senha" id="password" formControlName="password">
+            </ion-input>
+            <div *ngIf="signup.get('password').invalid && (signup.get('password').dirty || signup.get('password').touched)">
+                <small class="form-text text-danger" *ngIf="signup.get('password').errors.required || signup.get('password').errors.minlength">
+          Senha inválida. Mínimo 8 caracteres
+        </small>
+            </div>
+            <p #show id="show" (click)="showPassword(inputPassword, show)">Mostrar</p>
+        </div>
+        <div class="bgInput"></div>
+        <ion-button  expand="block" type="submit" id="button" [disabled]="!signup.valid || verificarUsuario(userName.value) || verificarEmail(email.value)">
+           Cadastrar
+        </ion-button>
+        <ion-button  expand="block" id="button2" [routerLink]="'/login'" routerLinkActive="router-link-active">Voltar
+        </ion-button>
+    </form>
+</ion-content>

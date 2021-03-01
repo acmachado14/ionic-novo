@@ -1,0 +1,144 @@
+#pageHeader {
+    position: absolute;
+    height: 36px;
+    left: 16px;
+    right: 16px;
+    top: 60px;
+}
+
+#menuText {
+    /* Sign Up */
+    position: absolute;
+    width: 113px;
+    height: 36px;
+    left: calc(50% - 113px / 2 + 2px);
+    top: 0px;
+    /* UI - 30 Semi */
+    font-family: Arial;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+    /* Black */
+    color: #000000;
+}
+
+.opcoes {
+    font-family: Arial;
+}
+#contasText {
+    position: absolute;
+    width: 104px;
+    height: 36px;
+    left: calc(50% - 104px / 2 + 1.5px);
+    top: 0px;
+    /* UI - 30 Semi */
+    font-family: Arial;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+    /* Black */
+    color: #000000;
+}
+
+#logoutText {
+    position: absolute;
+    width: 58px;
+    height: 19px;
+    left: 0px;
+    top: calc(50% - 19px / 2 - 0.5px);
+    /* UI - 16 Medium */
+    font-family: Arial;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #d25050;
+    cursor: pointer;
+}
+
+#newText {
+    position: absolute;
+    width: 45px;
+    height: 19px;
+    right: 15px;
+    top: 150px;
+    /* UI - 16 Medium */
+    font-family: Arial;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: right;
+    color: #497ee0;
+    cursor: pointer;
+}
+
+#tipoContas {
+    position: absolute;
+    height: 29px;
+    left: 16px;
+    right: 16px;
+    top: 104px;
+    /* UI - 30 Medium */
+    font-family: Arial;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+    /* Black */
+    color: #000000;
+}
+
+.conta {
+    position: relative;
+    width: 90%;
+    height: auto;
+    left: 16px;
+    top: 180px;
+}
+
+.icon {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 0px;
+    top: 15px;
+    background: #b83a3a;
+    border-radius: 15px;
+}
+
+.alt {
+    background: #7a2525;
+}
+
+.item01 {
+    /* Item */
+    position: relative;
+    width: max-content;
+    height: 19px;
+    left: 20px;
+    top: 15px;
+    /* UI - 16 Medium */
+    font-family: Arial;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    /* Black */
+    color: #000000;
+}
+
+.divider {
+    position: absolute;
+    height: 0px;
+    left: 0px;
+    right: 0px;
+    top: 35px;
+    /* Gray/02 */
+    border: 1px solid #e8e8e8;
+}
