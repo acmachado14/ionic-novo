@@ -1,48 +1,9 @@
-#signupText {
-  position: absolute;
-  width: 63px;
-  height: 19px;
-  right: 5px;
-  top: 8px;
-  /* UI - 16 Medium */
-  font-family: Arial;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
-  text-align: right;
-  color: #d25050;
-  cursor: pointer;
-}
 
-.opcoes {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  top: 95px;
-  // left: 45%;
-  // right: 16px;
-  // bottom: 342px;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: Arial;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 19px;
-  text-align: center;
-  /* White */
-  color: #ffffff;
-  background: #497ee0;
-  border-radius: 20px;
-  cursor: pointer;
-  height: 51px;
-}
+
 
 #loginText {
-  /* Log In */
-  position: relative;
+  padding-top: 10%;
+  padding-bottom: 5%;
   font-family: Arial;
   font-style: normal;
   font-weight: 600;
@@ -58,48 +19,38 @@
 }
 
 .input {
-  position: relative;
-  height: 50px;
-  left: -59px;
-  // right: 16px;
-  top: 128px;
+  float: center;
+  padding: 8px;
   width: max-content;
   margin-left: auto;
   margin-right: auto;
-  color: #bdbdbd;
-}
-
-.bgInput {
-  position: relative;
-  // left: 0%;
-  // right: 0%;
-  // top: 0%;
-  // bottom: 0%;
-  top: 68px;
-  margin-left: auto;
-  margin-right: auto;
-  /* Gray/01 */
-  background: #f6f6f6;
-  /* Gray/02 */
+  color: #666464;
   border: 1px solid #e8e8e8;
   box-sizing: border-box;
   border-radius: 8px;
   width: 343px;
-  height: 50px;
-}
-
-#button { 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 51px;
-  position: relative;
-  top: 95px;
-  // left: 45%;
-  // right: 16px;
-  // bottom: 342px;
+  height: 50px;  
+  margin-top: 10px;
+  margin-bottom: 10px;
   margin-left: auto;
   margin-right: auto;
+  background: #f6f6f6;
+}
+
+.label{
+  margin-left:30px;
+
+
+}
+#button { 
+  display: flex;
+  float: center;
+  padding-top:-40px;
+  flex-direction: column;
+  align-items: center;
+  margin-top:10px;
+  margin-left: 7%;
+  margin-right: 7%;
   font-family: Arial;
   font-style: normal;
   font-weight: 600;
@@ -108,47 +59,10 @@
   text-align: center;
   /* White */
   color: #ffffff;
-  background: #497ee0;
-  border-radius: 20px;
   cursor: pointer;
 }
 
 
-#forgotPassword {
-  position: relative;
-  width: 178px;
-  height: 19px;
-  // left: calc(50% - 178px / 2 + 0.5px);
-  // bottom: 515px;
-  margin-left: auto;
-  margin-right: auto;
-  top: 95px;
-  /* UI - 16 Semi */
-  font-family: Arial;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 19px;
-  color: #d25050;
-}
-
-#show {
-  /* Show */
-  position: absolute;
-  width: 60px;
-  height: 19px;
-  left: 270px;
-  top: -10px;
-  z-index: 2;
-  font-family: Arial;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
-  text-align: right;
-  color: #000000;
-  cursor: pointer;
-}
 
 #conta {
   display: flex;

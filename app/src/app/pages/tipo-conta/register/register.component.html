@@ -1,19 +1,22 @@
 <ion-content>
     <div id="pageHeader">
-        <p id="tipoContatext">Tipo Conta</p>
-        <p id="voltarText" [routerLink]="['/tipoConta']" routerLinkActive="router-link-active">Voltar</p>
+        <ion-fab vertical="top" horizontal="start" slot="fixed">
+            <ion-fab-button [routerLink]="['/tipoConta']" routerLinkActive="router-link-active">
+              <ion-icon name="arrow-back"></ion-icon> 
+            </ion-fab-button>
+          </ion-fab>
 
     </div>
     <form (ngSubmit)="salvarTipo()" #form="ngForm" [formGroup]="tipoConta">
+        <ion-label position="stacked" class="label">Novo tipo</ion-label>    
         <div class="input">
-            <ion-input type="text" placeholder="Tipo" id="tipo" formControlName="tipo" #tipo></ion-input>
+            <ion-input type="text" placeholder="Informe o novo tipo de conta" id="tipo" formControlName="tipo" #tipo></ion-input>
             <div *ngIf="verificarTipo(tipo.value)">
                 <small class="form-text text-danger">
-      Tipo de conta já existe
-    </small>
+                Tipo de conta já existente!
+            </small>
             </div>
         </div>
-        <div class="bgInput"></div>
         <ion-button expand="block" type="submit" id="button" [disabled]="!tipoConta.valid || verificarTipo(tipo.value)">
             Salvar
         </ion-button>

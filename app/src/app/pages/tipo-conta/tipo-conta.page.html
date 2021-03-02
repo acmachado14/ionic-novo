@@ -20,7 +20,7 @@
             <p class="opcoes" [routerLink]="['/usuario']" routerLinkActive="router-link-active">Perfil</p>
             </ion-item>
             <ion-item>
-              <ion-icon name="archive" slot="start"></ion-icon>
+              <ion-icon name="exit" slot="start"></ion-icon>
               <p class="opcoes" [routerLink]="['/login']" routerLinkActive="router-link-active">
                 Log out
              </p>
@@ -41,18 +41,21 @@
       </div>
 
     <div id="pageHeader">
-        
+
+      <h2 id="tipoContas">Tipo de contas</h2>
+
     </div>
-    <p id="tipoContas">Tipo de contas</p>
-    <p id="newText" [routerLink]="['/tipoConta/register']" routerLinkActive="router-link-active">Novo</p>
-    <div id="dataContas" *ngFor="let tipo of tiposContas; let even = even; let odd = odd">
-        <div class="conta">
-            <div class="icon alt" *ngIf="even"></div>
-            <div class="icon" *ngIf="odd"></div>
-            <div class="item01">
-                <p>{{tipo.nomeTipo}}</p>
-            </div>
-            <div class="divider"></div>
-        </div>
-    </div>
+    <div class="ion-margin" *ngFor="let tipo of tiposContas; let even = even; let odd = odd">
+        <ion-item>
+          <p>{{tipo.nomeTipo}}</p>
+          <ion-icon name="card" size="small" slot="end"></ion-icon>
+        </ion-item>
+      </div>
+  
+ 
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button id="novo" [routerLink]="['/tipoConta/register']" routerLinkActive="router-link-active">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
 </ion-content>

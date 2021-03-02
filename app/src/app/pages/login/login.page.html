@@ -1,24 +1,30 @@
 <ion-content id="page">
-     <img
-        src="../../../assets/conta.png"
-        alt="conta"
-        id="conta"
+    <img
+        src="../../../assets/user-icon.png"
+        alt="login"
+        id="conta" height="150px" width="100px"
       />
-    <p id="loginText">Login</p>
-    <form [formGroup]="login" (ngSubmit)="enviou()">
-        <div id="inputUser" class="input">
-            <ion-input type="text" placeholder="Usuário" id="userName" formControlName="userName"></ion-input>
-        </div>
-        <div class="bgInput"></div>
-        <div id="inputPassword" class="input">
-            <ion-input type="password"#inputPassword placeholder="Senha" id="password" formControlName="password"></ion-input>
-            <p #show id="show" (click)="showPassword(inputPassword, show)">Mostrar</p>
-        </div>
-        <div class="bgInput"></div>
+    <div class ="ion-padding">
+        <p id="loginText">Login</p>
+    </div>
+
+    <form [formGroup]="login" (ngSubmit)="loginClick()">
+            <ion-label position="stacked" class="label">Nome de usuário</ion-label>
+            <div class="input">
+                <ion-input type="text" placeholder="Insira seu nome de usuário" id="userName" formControlName="userName" required></ion-input>
+            </div>
+
+            <ion-label position="stacked" class="label">Senha</ion-label>
+            <div id="inputPassword" class="input ion-padding">
+                <ion-input type="password"#inputPassword placeholder="Insira sua senha" id="password" formControlName="password" required>
+                </ion-input>
+            </div>
+
         <ion-button expand="block" type="submit" id="button" [disabled]="!login.valid">
             Login
         </ion-button>
-        <ion-button  expand="block" class="opcoes" [routerLink]="'/register'" routerLinkActive="router-link-active">Cadastrar
-        </ion-button>
+
+        <p class="ion-text-center" [routerLink]="'/register'" routerLinkActive="router-link-active">Não possui um cadastro? <a>Cadastre-se</a></p>
+
     </form>
 </ion-content>

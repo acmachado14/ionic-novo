@@ -22,7 +22,7 @@
             <p class="opcoes" [routerLink]="['/usuario']" routerLinkActive="router-link-active">Perfil</p>
             </ion-item>
             <ion-item>
-              <ion-icon name="archive" slot="start"></ion-icon>
+              <ion-icon name="exit" slot="start"></ion-icon>
               <p class="opcoes" [routerLink]="['/login']" routerLinkActive="router-link-active">
                 Log out
              </p>
@@ -42,11 +42,7 @@
         </ion-header>
       </div>
 
-    <div id="bgUsuario"></div>
-    <div id="pageHeader">
-        
-    </div>
-    <div id="imgUsuario"></div>
+    <div id="imagem"><img src="../../../assets/user-icon.png" alt="login" id="imgUsuario"/></div>
     <div id="dadosUsuario">
         <p id="nomeUsuario">{{usuario.userName}}</p>
         <div id="emailUsuario">{{usuario.email}}</div>

@@ -23,9 +23,6 @@ export class TipoContaPage implements OnInit {
     }
 
     this.tiposContas = JSON.parse(localStorage.getItem('tipoBD'));
-    // if(this.tiposContas.length !== JSON.parse(localStorage.getItem('tipoBD')).length){
-    //   window.location.reload();
-    // }
   }
 
 }

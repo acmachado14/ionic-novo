@@ -36,18 +36,19 @@ export class LoginPage implements OnInit {
     this.login.get('password').setValue(this.pessoa.password);
   }
 
-  enviou(){
+  loginClick(){
     this.pessoa.userName = this.login.value.userName;
     this.pessoa.password = this.login.value.password;
 
     let controle = false;
-
-    for(var i = 0; i < this.pessoas.length; i++){
-      if(this.pessoas[i].userName === this.pessoa.userName && this.pessoas[i].password === this.pessoa.password){
-        localStorage.setItem('loginBD', JSON.stringify(this.pessoas[i]));
-        this.navController.navigateBack('/principal');
-        controle = true;
-        window.location.href = window.location.href.replace('login', 'principal');
+    if (this.pessoas.length != null){
+     for(var i = 0; i < this.pessoas.length; i++){
+       if(this.pessoas[i].userName === this.pessoa.userName && this.pessoas[i].password === this.pessoa.password){
+         localStorage.setItem('loginBD', JSON.stringify(this.pessoas[i]));
+          this.navController.navigateBack('/principal');
+         controle = true;
+         window.location.href = window.location.href.replace('login', 'principal');
+       }
       }
     }
 
@@ -64,18 +65,4 @@ export class LoginPage implements OnInit {
     toast.present();
   }
 
-  showPassword(input, text) {
-    if (input.el.type === 'password') {
-      text.style.width = '80px';
-      text.style.left = '250px';
-      text.innerText = 'Esconder';
-      input.el.type = 'text';
-    } else {
-      text.style.width = '60px';
-      text.style.left = '270px';
-      text.innerText = 'Mostrar';
-      input.el.type = 'password';
-    }
-    return true;
-  }
 }

@@ -17,39 +17,13 @@ export class ContaPage implements OnInit {
     email: null,
     password: null,
   };
-  meses: any = [
-    'Jan',
-    'Fev',
-    'Mar',
-    'Abr',
-    'Mai',
-    'Jun',
-    'Jul',
-    'Ago',
-    'Set',
-    'Out',
-    'Nov',
-    'Dez',
-  ];
+  meses: any = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez',];
 
   constructor(
     protected titleService: Title,
     protected navController: NavController,
   ) {
-    this.titleService.setTitle('Minha Conta');
-  }
-
-  getPercentage() {
-    const percentage = (this.currentMonth * 100) / this.lastMonth / 100;
-    return percentage;
-  }
-
-  setStroke() {
-    return this.sizeCircle + this.sizeCircle * this.getPercentage();
-  }
-
-  arredondar(value) {
-    return Math.floor(value);
+    this.titleService.setTitle('Minhas Contas');
   }
 
   ngOnInit() {
@@ -77,17 +51,6 @@ export class ContaPage implements OnInit {
     }
   }
 
-  obterData(data: string): string {
-    let date = new Date(data);
-    let dataFormatada =
-      date.getDate() +
-      ' ' +
-      this.meses[date.getMonth()] +
-      ' ' +
-      date.getFullYear();
-    return dataFormatada;
-  }
-
   obterContas(contas: any) {
     let currentDate = new Date();
     for (var i = 0; i < contas.length; i++) {
@@ -106,15 +69,4 @@ export class ContaPage implements OnInit {
     }
   }
 
-  totalContas() {
-    let total = 0;
-    for (var i = 0; i < this.contasUsuario.length; i++) {
-      total += this.contasUsuario[i].valor;
-    }
-    return total;
-  }
-
-  excluir() {
-    console.log('excluir');
-  }
 }

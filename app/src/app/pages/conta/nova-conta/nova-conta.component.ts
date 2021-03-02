@@ -16,7 +16,7 @@ export class NovaContaComponent implements OnInit {
   tiposContas: any;
   indice = null;
   contas: any = [];
-  Iconta = {
+  userConta = {
     id: null,
     descricao: null,
     tipo: null,
@@ -32,12 +32,7 @@ export class NovaContaComponent implements OnInit {
     dataVencimento: new FormControl('', Validators.required),
     situacao: new FormControl('', Validators.required),
   });
-  constructor(
-    protected titleService: Title,
-    protected navController: NavController,
-    private toastController: ToastController,
-    private activatedRoute: ActivatedRoute
-  ) {
+  constructor(protected titleService: Title, protected navController: NavController, private toastController: ToastController,private activatedRoute: ActivatedRoute) {
     titleService.setTitle('Nova Conta');
   }
 
@@ -59,7 +54,7 @@ export class NovaContaComponent implements OnInit {
       if(param['id']){
         for(var i = 0; i < this.contas.length; i++){
           if(this.contas[i].id == param['id']){
-            this.Iconta = this.contas[i];
+            this.userConta = this.contas[i];
             this.uuid = this.contas[i].id;
             this.indice = i;
           }
@@ -67,37 +62,37 @@ export class NovaContaComponent implements OnInit {
       }
     });
 
-    this.conta.get('descricao').setValue(this.Iconta.descricao);
-    this.conta.get('tipo').setValue(this.Iconta.tipo);
-    this.conta.get('valor').setValue(this.Iconta.valor);
-    this.conta.get('dataVencimento').setValue(this.Iconta.dataVencimento);
-    this.conta.get('situacao').setValue(this.Iconta.situacao);
+    this.conta.get('descricao').setValue(this.userConta.descricao);
+    this.conta.get('tipo').setValue(this.userConta.tipo);
+    this.conta.get('valor').setValue(this.userConta.valor);
+    this.conta.get('dataVencimento').setValue(this.userConta.dataVencimento);
+    this.conta.get('situacao').setValue(this.userConta.situacao);
   }
 
-  enviou() {
+  salvarConta() {
     this.contas = JSON.parse(localStorage.getItem('contaBD'));
 
     if(this.uuid){
       if(this.contas.find( conta => conta.id === this.uuid)){
-        this.Iconta.id = this.uuid;
-        this.Iconta.descricao = this.conta.value.descricao;
-        this.Iconta.tipo = this.conta.value.tipo;
-        this.Iconta.valor = this.conta.value.valor;
-        this.Iconta.dataVencimento = this.conta.value.dataVencimento;
-        this.Iconta.situacao = this.conta.value.situacao;
-        this.Iconta.usuario = this.usuario;
-        this.contas[this.indice] = this.Iconta;
+        this.userConta.id = this.uuid;
+        this.userConta.descricao = this.conta.value.descricao;
+        this.userConta.tipo = this.conta.value.tipo;
+        this.userConta.valor = this.conta.value.valor;
+        this.userConta.dataVencimento = this.conta.value.dataVencimento;
+        this.userConta.situacao = this.conta.value.situacao;
+        this.userConta.usuario = this.usuario;
+        this.contas[this.indice] = this.userConta;
         this.exibirMensagem('Conta Editada!!!');
       }
     }else{
-      this.Iconta.id = uuid();
-      this.Iconta.descricao = this.conta.value.descricao;
-      this.Iconta.tipo = this.conta.value.tipo;
-      this.Iconta.valor = this.conta.value.valor;
-      this.Iconta.dataVencimento = this.conta.value.dataVencimento;
-      this.Iconta.situacao = this.conta.value.situacao;
-      this.Iconta.usuario = this.usuario;
-      this.contas.push(this.Iconta);
+      this.userConta.id = uuid();
+      this.userConta.descricao = this.conta.value.descricao;
+      this.userConta.tipo = this.conta.value.tipo;
+      this.userConta.valor = this.conta.value.valor;
+      this.userConta.dataVencimento = this.conta.value.dataVencimento;
+      this.userConta.situacao = this.conta.value.situacao;
+      this.userConta.usuario = this.usuario;
+      this.contas.push(this.userConta);
       this.exibirMensagem('Conta cadastrada!!!');
     }
 
